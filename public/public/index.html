@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A real-time team collaboration and notice board.">
+    <title>Team Notice Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <h1>Team Notice Board</h1>
+            <p>Share updates and collaborate in real-time</p>
+        </header>
+
+        <main role="main">
+            <section class="post-section" aria-labelledby="post-heading">
+                <h2 id="post-heading" class="sr-only">Post a new update</h2>
+                <form id="post-form" aria-label="Post a message">
+                    <label for="author-input" class="sr-only">Your Name</label>
+                    <input type="text" id="author-input" placeholder="Your Name" aria-required="true" required>
+                    
+                    <label for="message-input" class="sr-only">Your Message</label>
+                    <textarea id="message-input" placeholder="What's on your mind? Share an update with the team..." aria-required="true" required></textarea>
+                    
+                    <button type="submit" aria-label="Submit post">Post Update</button>
+                </form>
+            </section>
+
+            <section class="board-section" id="board" aria-live="polite" aria-atomic="true">
+                <div class="loader" role="status">Loading messages...</div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
